@@ -1,0 +1,62 @@
+    <nav>
+
+        {% if url_for(request.endpoint, **request.view_args) == '/dashboard' %}
+            <div class="flex-wrapper flex-between flex-center-align">
+                <div>
+                    <h1>Arbortary</h1>
+                    <h4>A site to track randomly planted trees</h4>
+                </div>
+                <div style="width: 40%;">
+                    <div class="flex-wrapper flex-around flex-center-align">
+                        <a href="/user/account">My Trees</a>
+                        <h3>Welcome, {{ session.user_name }}</h3>
+                    </div>
+                    <div class="flex-wrapper flex-evenly">
+                        <a href="/new/tree">Plant a Tree</a>
+                        <a href="/users">All Users</a>
+                        <a href="/logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+
+            {% elif url_for(request.endpoint, **request.view_args) == '/users' %}
+            <div class="flex-wrapper flex-between flex-center-align">
+                <div>
+                    <h1>Arbortary</h1>
+                    <h4>A site to track randomly planted trees</h4>
+                </div>
+                <div style="width: 40%;">
+                    <div class="flex-wrapper flex-around flex-center-align">
+                        <a href="/user/account">My Trees</a>
+                        <h3>Welcome, {{ session.user_name }}</h3>
+                    </div>
+                    <div class="flex-wrapper flex-evenly">
+                        <a href="/new/tree">Plant a Tree</a>
+                        <a href="/">Dashborad</a>
+                        <a href="/users">All Users</a>
+                        <a href="/logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+
+            {% else %}
+            <div class="flex-wrapper flex-between flex-center-align">
+                <div>
+                    <h1>Arbortary</h1>
+                    <h4>A site to track randomly planted trees</h4>
+                </div>
+                <div style="width: 40%;">
+                    <div class="flex-wrapper flex-around flex-center-align">
+                        <a href="/user/account">My Trees</a>
+                        <h3>Welcome, {{ session.user_name }}</span>
+                    </div>
+                    <div class="flex-wrapper flex-evenly">
+                        <a href="/">Dashborad</a>
+                        <a href="/users">All Users</a>
+                        <a href="/logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+    </nav>

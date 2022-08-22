@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+
+{% block title %}{{ session.user_name }}{% endblock %}
+
+
+{% block content %}
+
+    <div style="margin: 100px 200px;">
+        <h2>Manage My Trees</h2>
+        <br><br>
+        <table>
+            <tr>
+                <th>Species</th>
+                <th>Date Planted</th>
+                <th>Actions</th>
+            </tr>
+            {% for tree in trees %}
+                <tr>
+                    <td>{{ tree.species }}</td>
+                    <td>{{ tree.plant_date.strftime('%B %d, %y') }}</td>
+                    <td>
+                        <a href="/edit/{{tree.id}}">Edit</a> |
+                        <a href="/delete/{{tree.id}}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}

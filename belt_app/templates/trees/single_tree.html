@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+
+{% block title %}{{ tree.species }}{% endblock %}
+
+
+{% block content %}
+
+    <div class="flex-wrapper flex-evenly">
+        <div style="width: 40%;">
+            <h2>{{ tree.species }} planted by {{ tree.user.return_full_name() }}</h2>
+            <br>
+            <h3>Where: {{ tree.location }}</h3>
+            <br>
+            <h3>When: {{ tree.plant_date.strftime('%B %d, %y') }}</h3>
+            <br>
+            <h3>Reason:<br> {{ tree.reason }}</h3>
+        </div>
+        
+        <div style="width: 40%;">
+            <h4>Visited By:</h4>
+            <div style="border: 1px solid white; width:60%; padding:20px;">
+                {% if tree.visitors[0].first_name != None %}
+                    {% for visitor in tree.visitors %}
+                        <p>{{ visitor.return_full_name() }}</p>
+                    {% endfor %}
+                {% else %}
+                    <p>You Can be the first to visit this tree!</p>
+                {% endif %}
+            </div>
+            <br><br>
+            <a href="/visited/{{tree.id}}">Did you visit this tree</a>
+        </div>    
+    </div>
+
+
+{% endblock %}

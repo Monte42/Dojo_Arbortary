@@ -1,0 +1,95 @@
+body{
+    background-color: #5b5b5b;
+    color: white;
+    margin: 0;
+}
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+hr{
+    width: 80%;
+}
+a{
+    color: aqua;
+    text-decoration: none;
+}
+button a {
+    color: #5b5b5b;
+}
+nav{
+    padding: 0 20px;
+    background-color: #2f2f2f;
+}
+th,td{
+    text-align: center;
+    padding: 5px 10px;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;
+    background-color: #4f4f4f;
+}
+.text-align-center{
+    text-align: center;
+}
+.flex-wrapper{
+    display: flex;
+}
+.flex-evenly{
+    justify-content: space-evenly;
+}
+.flex-around{
+    justify-content: space-around;
+}
+.flex-between{
+    justify-content: space-between;
+}
+.flex-column{
+    flex-direction: column;
+}
+.flex-center-justify{
+    justify-content: center;
+}
+.flex-center-align{
+    align-items: center;
+}
+.flex-end{
+    justify-content: end;
+    align-items: end;
+}
+.flex-gap{
+    gap: 10px;
+}
+
+#flash_msgs{
+    width:40%;
+    position: absolute;
+    top: 50px;
+    left:30%;
+    border: 2px solid #2f2f2f;
+    background-color: rgba(60, 60, 60, 0.9);
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px white;
+    padding: 20px;
+}
+#flash_msgs button{
+    margin: 0 90%;
+    padding: 2px 5px;
+    border: 1px solid black;
+    box-shadow: 2px 3px black;
+    border-radius: 5px;
+    background-color: rgb(188, 3, 3);
+}
+#flash_msgs button:hover{
+    position: relative;
+    top: 1px;
+    box-shadow: 2px 2px black;
+}
+#flash_msgs button:active{
+    position: relative;
+    top: 2px;
+    box-shadow: 2px 1px black;
+}

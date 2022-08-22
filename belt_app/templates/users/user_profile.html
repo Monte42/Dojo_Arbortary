@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+
+{% block title %}{{user.return_full_name()}}{% endblock %}
+
+
+{% block content %}
+
+    <h1>{{user.return_full_name()}}</h1>
+
+    <h3>Email: {{ user.email }}</h3>
+    <h3>Join Date: {{ user.created_at.strftime("%B %d, %y") }}</h3>
+
+    {% if session.user_id == user.id %}
+        <div class="flex-wrapper flex-center-justify">
+                <button><a href="/users/{{user.id}}/edit">Update Profile</a></button>
+                <button><a href="/users/{{user.id}}/delete">Delete Account</a></button>
+        </div>
+    {% endif %}
+
+{% endblock %}

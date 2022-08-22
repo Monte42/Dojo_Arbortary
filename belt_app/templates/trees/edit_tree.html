@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Edit{% endblock %}
+
+
+{% block content %}
+
+    <div style="margin: 100px 200px;">
+        <h2>Replant Your Tree</h2>
+        <br><br>
+        <form class="flex-wrapper flex-column flex-gap" action="/edit/{{data.id}}" method="POST">
+            <label>
+                Species: <br>
+                <input type="text" name="species" value="{{data.species}}">
+            </label>
+            <label>
+                Location: <br>
+                <input type="text" name="location" value="{{data.location}}">
+            </label>
+            <label>
+                Reason: <br>
+                <input type="text" name="reason" value="{{data.reason}}">
+            </label>
+            <label>
+                Date Planted <br>
+                <input type="date" name="plant_date" value="{{data.plant_date}}">
+            </label>
+            <input style="width:fit-content;" type="submit" value="Update">
+        </form>
+    </div>
+
+{% endblock %}

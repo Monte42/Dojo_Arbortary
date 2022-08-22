@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+
+{% block title %}All{% endblock %}
+
+
+{% block content %}
+
+    <div style="margin: 100px; border: 1px solid white; width:fit-content;">
+        <table>
+            <tr>
+                <th>Species</th>
+                <th>Planted By</th>
+                <th>visitors</th>
+                <th>Actions</th>
+            </tr>
+            {% for tree in trees %}
+                <tr>
+                    <td>{{ tree.species }}</td>
+                    <td>{{ tree.user.return_full_name() }}</td>
+                    <td>{{ tree.visitors }}</td>
+                    <td><a href="/show/{{tree.id}}">Details</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}
